@@ -1,0 +1,20 @@
+<div class="jumbotron" ng-show="load">
+  <a class="btn btn-primary btn-lg" onclick="window.history.back()">返回</a>
+  <h1 ng-bind="movie.title"></h1>
+	<div class="list-group">
+	  <div class="list-group-item">
+		<div class="media">
+		  <div class="media-left" href="#">
+		    <img class="media-object" ng-src="{{movie.images.large}}" alt="{{item.title}}" src="" data-holder-rendered="true">
+		  </div>
+		  <div class="media-body">
+		    <p>导演：<strong>{{movie.directors[0].name}}</strong></p>
+		    <p>类型：<strong ng-repeat="genre in movie.genres">{{genre}}<span ng-if="!$last">、</span></strong></p>
+		    <p>主演：<strong ng-repeat="cast in movie.casts">{{cast.name}}<span ng-if="!$last">、</span></strong></p>
+  			<p>简介：<div style="font-size:2em;" ng-bind="movie.summary"></div></p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <p><a class="btn btn-primary btn-lg" target="_blank" ng-href="{{movie.alt}}" role="button">前去观影</a></p>
+</div>
